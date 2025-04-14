@@ -26,7 +26,7 @@ def set_random_seed(seed_value=42):
     tf.random.set_seed(seed_value)
 
 # Define the main folder path
-MAINFOLDER = r"D:\APPdata_StraightneningCRP"
+MAINFOLDER = r"./APPdata_StraightneningCRP"
 
 # Create other paths relative to the main folder
 training_file_path = os.path.join(MAINFOLDER, "Training", "Training_Straightening.xlsx")  # FIXED TRAINING DATA
