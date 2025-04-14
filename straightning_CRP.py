@@ -130,13 +130,13 @@ def process_data():
         return
 
     # List of 12 unique asset names
-    assets_list = ["Straighting Machine (Bottom) GB OP DE", 
+    assets_list = [
+        "Straighting Machine (Bottom) GB OP DE", 
                    "Straighting Machine (Top) GB OP DE",
                    "Straighting Machine (Top) Roller DE", 
                    "Straighting Machine (Top) Roller NDE",
                    "Straighting Machine (Bottom) Roller DE", 
-                   "Straighting Machine (Bottom) Roller NDE"
-       ]
+                   "Straighting Machine (Bottom) Roller NDE"]
 
 
     # Columns to extract for each asset, corresponding to F, I, L, O, R, U
@@ -207,6 +207,9 @@ def process_data():
 
     # Add an empty 'Code' column at the end
     output_df['Code'] = 0
+    
+    # Fill NaN values in the DataFrame with 0
+    output_df = output_df.fillna(0)
 
 
     # Save the processed data using ExcelWriter
