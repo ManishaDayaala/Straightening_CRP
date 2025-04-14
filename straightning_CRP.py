@@ -566,10 +566,10 @@ st.title("Time Prediction")
 #....CHANGED........................................................................................................................................
 
 
-if st.button(("Predict Time")):#, disabled=not st.session_state["check_bd_clicked"]):
-    #if st.session_state["bd_output"] == "No BD predicted":
-    #    st.error("No breakdown predicted. Cannot proceed with time prediction.")
-    #else:
+if st.button(("Predict Time"), disabled=not st.session_state["check_bd_clicked"]):
+    if st.session_state["bd_output"] == "No BD predicted":
+        st.error("No breakdown predicted. Cannot proceed with time prediction.")
+    else:
         with st.spinner("Training the model and making predictions..."):
             #train_model(training_file_path)
             result = predict_time(test_file_path)  # Predict time using predefined test data
@@ -734,7 +734,7 @@ st.title("Anamoly Detector")
 # Inside Streamlit UI
 if st.button("Check abnormality in sensors"):
     with st.spinner("🔍 Checking for abnormality..."):
-        train_lstm_autoencoder_model(training_file_path, model_folder_path)
+        #train_lstm_autoencoder_model(training_file_path, model_folder_path)
         result = predict_lstm_autoencoder(test_file_path, model_folder_path)
         st.session_state["Anamoly_output"] = result
 
@@ -743,23 +743,7 @@ if st.button("Check abnormality in sensors"):
         else:
             st.success("✅ Anomaly detection complete!")
 
-
-
-
-
-
-
-
-
-
-
-
 #..........................................Trend..............................
-
-
-
-
-
 
 import matplotlib.pyplot as plt
 
