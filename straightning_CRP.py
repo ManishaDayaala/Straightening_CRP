@@ -300,6 +300,18 @@ if st.button("Predict Breakdown"):
 
 
 
+# Use an expander to provide breakdown code information
+with st.expander("Breakdown Classification and Codes", expanded=True):
+    st.markdown("""
+    Each breakdown type is assigned a unique code to simplify identification. Here’s what each code represents:
+
+    - **Code 1: Guide Plate and Unloading issues**  
+      Issues specifically related to the Guide plate or unloading issues of the machine.
+    
+    - **Code 2: Roller Issues**  
+      Covers all kind of problems related to rollers.
+    """)
+
 
 # ################################        time prediction             #############################
 import streamlit as st
